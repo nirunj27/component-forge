@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import bcrypt from "bcryptjs";
 import { getCatalogItems, CATALOG_CATEGORIES } from "@component-forge/catalog";
-import { AVATAR_PORTRAITS } from "./avatars.js";
+import { AVATAR_PORTRAITS, isAvatarId } from "./avatars.js";
 import { getApiDataDir } from "./paths.js";
 
 const USERS_PATH = join(getApiDataDir(), "users.json");
@@ -192,7 +192,7 @@ export async function getAvailableAvatars(excludeUserId?: string): Promise<strin
 }
 
 async function assertAvatarAvailable(avatar: string, excludeUserId?: string): Promise<void> {
-  if (!AVATAR_OPTIONS.includes(avatar)) {
+  if (!isAvatarId(avatar)) {
     throw new Error("Invalid avatar selection");
   }
   const used = await getUsedAvatars(excludeUserId);
