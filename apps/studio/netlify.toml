@@ -1,9 +1,10 @@
 [build]
-  command = "cd ../.. && pnpm install && pnpm build && pnpm generate:all && pnpm --filter @component-forge/studio build"
-  publish = "dist"
+  command = "pnpm install && pnpm run build:netlify:studio"
+  publish = "apps/studio/dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  PNPM_VERSION = "10.33.2"
 
 [[redirects]]
   from = "/*"

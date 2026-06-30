@@ -1,6 +1,6 @@
 [build]
-  command = "pnpm run build:netlify"
-  publish = "dist"
+  command = "pnpm install && pnpm run build:netlify:playground"
+  publish = "apps/playground/dist"
 
 [build.environment]
   NODE_VERSION = "20"
