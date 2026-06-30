@@ -1,0 +1,19 @@
+name: CommandPalette
+description: Keyboard command launcher (Ctrl+K)
+category: navigation
+props:
+  activeIndex:
+    type: number
+    default: 0
+    description: Active item index
+  collapsed:
+    type: boolean
+    default: false
+slots:
+  - name: children
+    required: false
+    description: Navigation items
+events:
+  - onClick
+a11y:
+  role: region

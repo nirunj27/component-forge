@@ -1,0 +1,12 @@
+.root {
+  width: 100%;
+  font-family: inherit;
+}
+
+.collapsed {
+  opacity: 0.85;
+}
+
+.nav { display: flex; gap: 1rem; align-items: center; }
+.link { font-size: 0.875rem; font-weight: 500; color: #374151; text-decoration: none; }
+.link:hover { color: #2563eb; }

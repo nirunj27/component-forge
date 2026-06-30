@@ -1,0 +1,44 @@
+{
+  "name": "component-forge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Schema-driven React component generator",
+  "scripts": {
+    "build": "turbo run build --filter=./packages/* --filter=./plugins/*",
+    "dev": "turbo run dev",
+    "dev:all": "concurrently -n api,web,studio -c blue,green,magenta \"pnpm api\" \"pnpm --filter @component-forge/playground dev\" \"pnpm --filter @component-forge/studio dev\"",
+    "studio": "pnpm --filter @component-forge/studio dev",
+    "dev:studio": "concurrently -n api,studio -c blue,magenta \"pnpm api\" \"pnpm studio\"",
+    "api": "pnpm --filter @component-forge/api dev",
+    "playground": "pnpm --filter @component-forge/playground dev",
+    "generate": "pnpm --filter @component-forge/cli start generate",
+    "generate:all": "pnpm --filter @component-forge/cli start generate --all --schemas ../../schemas -o ../../packages/ui/src/components -c ../..",
+    "seed:catalog": "pnpm --filter @component-forge/api exec tsx ../../scripts/seed-catalog.ts",
+    "refresh:catalog": "pnpm --filter @component-forge/api exec tsx ../../scripts/refresh-catalog.ts",
+    "plugins": "pnpm --filter @component-forge/cli start plugins -c ../..",
+    "test": "pnpm --filter @component-forge/ui test && pnpm --filter @component-forge/plugin-sdk test",
+    "storybook": "pnpm --filter @component-forge/ui storybook",
+    "typecheck": "turbo run typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": ["react", "component-generator", "design-system", "codegen"],
+  "dependencies": {
+    "@component-forge/plugin-sdk": "workspace:*",
+    "@component-forge/plugin-testid": "workspace:*"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1"
+  },
+  "packageManager": "pnpm@10.33.2"
+}

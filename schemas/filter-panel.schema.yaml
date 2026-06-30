@@ -1,0 +1,18 @@
+name: FilterPanel
+description: Faceted filter sidebar
+category: search
+props:
+  query:
+    type: string
+    default: ""
+  placeholder:
+    type: string
+    default: Search…
+  loading:
+    type: boolean
+    default: false
+events:
+  - onChange
+  - onClick
+a11y:
+  role: textbox

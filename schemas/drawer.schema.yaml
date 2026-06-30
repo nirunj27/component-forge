@@ -1,0 +1,23 @@
+name: Drawer
+description: Slide-in navigation panel
+category: navigation
+props:
+  isOpen:
+    type: boolean
+    default: false
+    description: Visibility
+  title:
+    type: string
+    description: Title text
+slots:
+  - name: children
+    required: true
+    description: Body content
+events:
+  - onClose
+a11y:
+  role: dialog
+  keyboard:
+    - Escape
+  aria:
+    - aria-modal

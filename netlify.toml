@@ -1,0 +1,25 @@
+[build]
+  command = "pnpm install && pnpm build && pnpm generate:all"
+  publish = "apps/api/public"
+  functions = "apps/api/netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+  FORGE_ROOT = "/var/task"
+  FORGE_API_DATA = "/var/task/apps/api"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = [
+    "apps/api/db.json",
+    "apps/api/users.json",
+    "schemas/**",
+    "packages/ui/src/components/**",
+    "forge.config.ts",
+    "plugins/**"
+  ]
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api"
+  status = 200

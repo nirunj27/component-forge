@@ -1,0 +1,28 @@
+name: Alert
+description: Inline alert banner
+category: feedback
+props:
+  variant:
+    type: enum
+    values:
+      - primary
+      - secondary
+      - success
+      - warning
+      - error
+    default: primary
+  size:
+    type: enum
+    values:
+      - sm
+      - md
+      - lg
+    default: md
+slots:
+  - name: children
+    required: false
+    description: Content
+events:
+  - onClick
+a11y:
+  role: status

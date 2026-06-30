@@ -1,0 +1,11 @@
+[build]
+  command = "cd ../.. && pnpm install && pnpm build && pnpm generate:all && pnpm --filter @component-forge/playground build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

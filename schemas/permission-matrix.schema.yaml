@@ -1,0 +1,22 @@
+name: PermissionMatrix
+description: Role permission grid
+category: admin
+props:
+  status:
+    type: enum
+    values:
+      - active
+      - inactive
+      - pending
+    default: active
+  role:
+    type: string
+    description: User or entity role
+slots:
+  - name: children
+    required: false
+events:
+  - onClick
+  - onChange
+a11y:
+  role: region

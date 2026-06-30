@@ -1,0 +1,17 @@
+name: InfiniteScroll
+description: Infinite scroll container
+category: utility
+props:
+  value:
+    type: string
+    default: ""
+  disabled:
+    type: boolean
+    default: false
+slots:
+  - name: children
+    required: false
+events:
+  - onClick
+a11y:
+  role: button

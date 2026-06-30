@@ -1,0 +1,21 @@
+name: Card
+description: Container with header, body, and optional footer
+category: layout
+
+props:
+  variant:
+    type: enum
+    values: [elevated, outlined, flat]
+    default: elevated
+
+slots:
+  - name: title
+    description: Card header title
+  - name: children
+    required: true
+    description: Main card content
+  - name: footer
+    description: Footer actions or metadata
+
+a11y:
+  role: region

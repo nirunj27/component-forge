@@ -1,0 +1,27 @@
+name: Select
+description: Dropdown select
+category: forms
+props:
+  label:
+    type: string
+    description: Field label
+  value:
+    type: string
+    default: ""
+  disabled:
+    type: boolean
+    default: false
+  placeholder:
+    type: string
+    default: Select an option
+events:
+  - onChange
+options:
+  - value: a
+    label: Option A
+  - value: b
+    label: Option B
+  - value: c
+    label: Option C
+a11y:
+  role: combobox

@@ -1,0 +1,22 @@
+import { describe, it, expect, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { Pagination } from "./Pagination";
+
+describe("Pagination", () => {
+  it("renders without crashing", () => {
+    render(<Pagination>Hello</Pagination>);
+    expect(screen.getByText("Hello")).toBeInTheDocument();
+  });
+
+  it("calls onClick when clicked", async () => {
+    const user = userEvent.setup();
+    const handleClick = vi.fn();
+    render(<Pagination onClick={handleClick}>Click</Pagination>);
+    await user.click(screen.getByRole("region"));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+
+
+});

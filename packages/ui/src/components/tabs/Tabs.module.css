@@ -1,0 +1,12 @@
+.root {
+  width: 100%;
+  font-family: inherit;
+}
+
+.collapsed {
+  opacity: 0.85;
+}
+
+.tabs { display: flex; gap: 0.25rem; border-bottom: 1px solid #e5e7eb; }
+.tab, .tabActive { padding: 0.625rem 1rem; font-size: 0.875rem; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; }
+.tabActive { color: #2563eb; border-bottom-color: #2563eb; font-weight: 600; }

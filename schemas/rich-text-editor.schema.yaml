@@ -1,0 +1,21 @@
+name: RichTextEditor
+description: WYSIWYG rich text editor
+category: advanced
+props:
+  value:
+    type: string
+    default: ""
+  readOnly:
+    type: boolean
+    default: false
+  height:
+    type: number
+    default: 320
+    description: Editor height in px
+slots:
+  - name: children
+    required: false
+events:
+  - onChange
+a11y:
+  role: textbox

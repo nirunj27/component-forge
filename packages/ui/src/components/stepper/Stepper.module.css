@@ -1,0 +1,14 @@
+.root {
+  width: 100%;
+  font-family: inherit;
+}
+
+.collapsed {
+  opacity: 0.85;
+}
+
+.stepper { display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0; }
+.step, .stepDone { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #9ca3af; }
+.stepDone { color: #2563eb; font-weight: 500; }
+.stepNum { display: inline-flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem; font-size: 0.75rem; border-radius: 9999px; background: #e5e7eb; }
+.stepDone .stepNum { color: #fff; background: #2563eb; }

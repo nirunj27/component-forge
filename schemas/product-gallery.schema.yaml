@@ -1,0 +1,21 @@
+name: ProductGallery
+description: Product image gallery
+category: ecommerce
+props:
+  src:
+    type: string
+    description: Media source URL
+  alt:
+    type: string
+    description: Accessible description
+  loading:
+    type: boolean
+    default: false
+slots:
+  - name: children
+    required: false
+    description: Caption or overlay
+events:
+  - onClick
+a11y:
+  role: region

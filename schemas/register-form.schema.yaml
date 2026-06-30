@@ -1,0 +1,28 @@
+name: RegisterForm
+description: User registration form
+category: authentication
+props:
+  name:
+    type: string
+    default: ""
+    description: Full name
+  email:
+    type: string
+    default: ""
+    description: Email address
+  password:
+    type: string
+    default: ""
+    description: Password
+  confirmPassword:
+    type: string
+    default: ""
+    description: Confirm password
+  loading:
+    type: boolean
+    default: false
+  error:
+    type: string
+    description: Form-level error
+events:
+  - onSubmit

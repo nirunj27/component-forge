@@ -1,0 +1,30 @@
+{
+  "name": "@component-forge/cli",
+  "version": "0.1.0",
+  "description": "CLI for generating React components from schemas",
+  "type": "module",
+  "bin": {
+    "forge": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@component-forge/engine": "workspace:*",
+    "@component-forge/plugin-sdk": "workspace:*",
+    "@component-forge/schema": "workspace:*",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "glob": "^11.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

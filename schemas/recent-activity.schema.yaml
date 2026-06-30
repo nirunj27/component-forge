@@ -1,0 +1,23 @@
+name: RecentActivity
+description: Compact activity list
+category: dashboard
+props:
+  title:
+    type: string
+    description: Widget title
+  value:
+    type: string
+    description: Primary metric
+  trend:
+    type: enum
+    values:
+      - up
+      - down
+      - neutral
+    default: neutral
+slots:
+  - name: children
+    required: false
+    description: Widget body
+a11y:
+  role: region

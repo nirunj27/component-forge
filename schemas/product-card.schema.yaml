@@ -1,0 +1,24 @@
+name: ProductCard
+description: Product summary card
+category: ecommerce
+props:
+  price:
+    type: number
+    default: 0
+  currency:
+    type: string
+    default: USD
+  quantity:
+    type: number
+    default: 1
+  inStock:
+    type: boolean
+    default: true
+slots:
+  - name: children
+    required: false
+    description: Product details
+events:
+  - onClick
+a11y:
+  role: region

@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "u-admin",
+      "email": "admin@example.com",
+      "name": "Admin",
+      "password": "$2a$10$6zKxYeMCRYqeAxUnDj2Wx.RRsYBnOrFg3L3EShoWQlHSeYZTxLB3K",
+      "role": "admin",
+      "avatar": "user-felix",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "u-dev-1",
+      "email": "alex@example.com",
+      "name": "Alex Rivera",
+      "password": "$2a$10$pcBaEuVoNGtAikwWCYGa7uU7BjcnVRcfCO.UNbF4KSixzoIBKSiKG",
+      "role": "developer",
+      "avatar": "user-aisha",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "u-dev-2",
+      "email": "sam@example.com",
+      "name": "Sam Chen",
+      "password": "$2a$10$pcBaEuVoNGtAikwWCYGa7uU7BjcnVRcfCO.UNbF4KSixzoIBKSiKG",
+      "role": "developer",
+      "avatar": "user-sam",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "u-viewer",
+      "email": "viewer@example.com",
+      "name": "Guest Viewer",
+      "password": "$2a$10$jGToZ2fV7thS1dsBvEpIIubenqAr/cp.78ANV5S228ad3MlkXvl0e",
+      "role": "viewer",
+      "avatar": "user-mia",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}

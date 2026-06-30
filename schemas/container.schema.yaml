@@ -1,0 +1,24 @@
+name: Container
+description: Max-width page container
+category: layout
+props:
+  variant:
+    type: enum
+    values:
+      - default
+      - compact
+      - spacious
+    default: default
+  gap:
+    type: enum
+    values:
+      - sm
+      - md
+      - lg
+    default: md
+slots:
+  - name: children
+    required: true
+    description: Layout content
+a11y:
+  role: region

@@ -1,0 +1,23 @@
+name: LoginForm
+description: User login form
+category: authentication
+props:
+  email:
+    type: string
+    default: ""
+    description: Email address
+  password:
+    type: string
+    default: ""
+    description: Password
+  rememberMe:
+    type: boolean
+    default: false
+  loading:
+    type: boolean
+    default: false
+  error:
+    type: string
+    description: Form-level error
+events:
+  - onSubmit

@@ -1,0 +1,20 @@
+name: Link
+description: Styled anchor
+category: inputs
+
+props:
+  variant:
+    type: enum
+    values: [primary, secondary]
+    default: primary
+  disabled:
+    type: boolean
+    default: false
+
+slots:
+  - name: children
+    required: false
+    description: Content
+
+a11y:
+  role: status

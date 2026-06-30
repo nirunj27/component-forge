@@ -1,0 +1,59 @@
+.wrapper {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.headerRow,
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.headerRow {
+  font-weight: 600;
+  color: #374151;
+  background: #f9fafb;
+}
+
+.scrollBody {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.virtualInner {
+  position: relative;
+  width: 100%;
+}
+
+.row {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #1d4ed8;
+  background: #dbeafe;
+  border-radius: 9999px;
+}
+
+.loading,
+.empty {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+}

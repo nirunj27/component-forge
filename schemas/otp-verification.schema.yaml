@@ -1,0 +1,16 @@
+name: OtpVerification
+description: OTP verification step
+category: authentication
+props:
+  code:
+    type: string
+    default: ""
+    description: 6-digit verification code
+  loading:
+    type: boolean
+    default: false
+  error:
+    type: string
+    description: Form-level error
+events:
+  - onSubmit

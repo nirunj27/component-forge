@@ -1,0 +1,31 @@
+name: Accordion
+description: Expandable sections
+category: data-display
+props:
+  variant:
+    type: enum
+    values:
+      - default
+      - bordered
+      - striped
+    default: default
+  loading:
+    type: boolean
+    default: false
+  empty:
+    type: boolean
+    default: false
+slots:
+  - name: children
+    required: false
+    description: Row or cell content
+  - name: header
+    required: false
+    description: Header area
+  - name: footer
+    required: false
+    description: Footer area
+events:
+  - onClick
+a11y:
+  role: region

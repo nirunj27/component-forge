@@ -1,0 +1,109 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.root:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.ghost {
+  background: transparent;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.danger {
+  background: #dc2626;
+  color: #fff;
+}
+
+.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.neutral {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.sm {
+  padding: 0.25rem 0.625rem;
+  font-size: 0.875rem;
+}
+
+.md {
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+}
+
+.lg {
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+}
+
+.primary {
+  /* primary variant */
+}
+
+.secondary {
+  /* secondary variant */
+}
+
+.success {
+  /* success variant */
+}
+
+.warning {
+  /* warning variant */
+}
+
+.error {
+  /* error variant */
+}
+
+.sm {
+  /* sm size */
+}
+
+.md {
+  /* md size */
+}
+
+.lg {
+  /* lg size */
+}

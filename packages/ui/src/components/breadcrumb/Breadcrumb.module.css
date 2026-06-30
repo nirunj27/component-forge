@@ -1,0 +1,11 @@
+.root {
+  width: 100%;
+  font-family: inherit;
+}
+
+.collapsed {
+  opacity: 0.85;
+}
+
+.breadcrumb { display: flex; gap: 0.5rem; align-items: center; font-size: 0.875rem; color: #6b7280; }
+.breadcrumb a { color: #2563eb; text-decoration: none; }
