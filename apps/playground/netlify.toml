@@ -1,9 +1,10 @@
 [build]
-  command = "cd ../.. && pnpm install && pnpm build && pnpm generate:all && pnpm --filter @component-forge/playground build"
+  command = "pnpm run build:netlify"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  PNPM_VERSION = "10.33.2"
 
 [[redirects]]
   from = "/*"

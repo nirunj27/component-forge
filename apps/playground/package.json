@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:netlify": "cd ../.. && corepack enable && corepack prepare pnpm@10.33.2 --activate && pnpm install && pnpm build && pnpm generate:all && pnpm --filter @component-forge/playground build",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit"
   },
@@ -29,5 +30,6 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.8.2",
     "vite": "^6.2.0"
-  }
+  },
+  "packageManager": "pnpm@10.33.2"
 }
