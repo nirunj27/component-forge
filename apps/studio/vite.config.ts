@@ -5,6 +5,7 @@ import { resolve } from "path";
 const appUiRoot = resolve(__dirname, "../../packages/app-ui");
 
 export default defineConfig({
+  base: process.env.VITE_BASE_PATH ?? "/",
   plugins: [react()],
   resolve: {
     alias: {

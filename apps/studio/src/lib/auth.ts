@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useAuthStore } from "../store/authStore";
+import { getApiBaseUrl, getApiTimeoutMs } from "./apiBaseUrl";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
+const API_BASE_URL = getApiBaseUrl();
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 15_000,
+  timeout: getApiTimeoutMs(),
 });
 
 api.interceptors.request.use((config) => {
@@ -21,8 +22,12 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       useAuthStore.getState().logout();
     }
-    const message =
-      error.response?.data?.message ?? error.message ?? "Request failed";
+    const isTimeout =
+      error.code === "ECONNABORTED" ||
+      error.message?.includes("timeout");
+    const message = isTimeout
+      ? "API is waking up (free tier). Wait up to a minute and try again."
+      : (error.response?.data?.message ?? error.message ?? "Request failed");
     return Promise.reject(new Error(message));
   },
 );

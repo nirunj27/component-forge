@@ -1,10 +1,11 @@
 import axios from "axios";
+import { getApiBaseUrl, getApiTimeoutMs } from "./apiBaseUrl";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
+const API_BASE_URL = getApiBaseUrl();
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10_000,
+  timeout: getApiTimeoutMs(),
   headers: { "Content-Type": "application/json" },
 });
 
@@ -18,10 +19,14 @@ apiClient.interceptors.request.use((config) => {
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    const message =
-      error.response?.data?.message ??
-      error.message ??
-      "An unexpected API error occurred";
+    const isTimeout =
+      error.code === "ECONNABORTED" ||
+      error.message?.includes("timeout");
+    const message = isTimeout
+      ? "API is waking up (free tier). Wait up to a minute and refresh."
+      : (error.response?.data?.message ??
+        error.message ??
+        "An unexpected API error occurred");
     return Promise.reject(new Error(message));
   },
 );

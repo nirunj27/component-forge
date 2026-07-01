@@ -69,7 +69,17 @@ const DB_PATH = join(getApiDataDir(), "db.json");
 export async function createApp(): Promise<Express> {
   const app = express();
 
-  app.use(cors());
+  const allowedOrigins = process.env.CORS_ORIGINS?.split(",")
+    .map((o) => o.trim())
+    .filter(Boolean);
+
+  app.use(
+    cors({
+      origin: allowedOrigins?.length ? allowedOrigins : true,
+      methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "Authorization", "X-Forge-Client"],
+    }),
+  );
   app.use(express.json({ limit: "1mb" }));
 
   await seedUsersIfEmpty();
